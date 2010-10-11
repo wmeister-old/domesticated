@@ -1,0 +1,26 @@
+<%= render "include/navigation" %>
+<p id="notice"><%= notice %></p>
+
+<div class="box">
+	<span class="post-header">
+  		<%= @company.name %></span>
+	<br />
+	<span class="cat-description">
+	<%= link_to @company.website, "http://"+@company.website %></span>
+	<!-- ><hr />
+	<br />
+	<%= @company.description %><br /><br /> -->
+</div>
+<!-- <%= image_tag @company.image.url(:display) %> -->
+
+<div class="box">
+	Categories:
+	Bicycles
+</div>
+<%= render :partial => @company.products %>
+
+<%= render "products/form" %>
+
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

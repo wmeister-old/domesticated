@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Domesticated</title>
+  <%= stylesheet_link_tag "main" %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+  <%= javascript_include_tag 'rails' %>
+<script type="text/javascript">
+function initMenu() {
+  $('#menu ul').hide();
+  $('#menu li a').click(
+    function() {
+        $(this).next().slideToggle('normal');	
+      }
+    );
+  }
+$(document).ready(function() {initMenu();});
+</script>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

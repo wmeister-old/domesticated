@@ -1,0 +1,20 @@
+<% @companies.each do |company| %>
+<div class="box company">
+	<span class="post-header">
+		<%= link_to company.name, company %></span>
+	<br />
+	<span class="cat-description">
+	<%= link_to company.website, "http://"+company.website %>
+    </span>
+    <br />
+	<span class="rating">***<span style="color:#CCC">**</span></span>
+    <br />
+	<%= company.city %>
+	<br />
+    <br />
+	<%= image_tag company.image.url(:thumb) %>
+	<br />
+	<%= link_to 'Edit', edit_company_path(company) %>
+	<%= link_to 'Destroy', company, :confirm => 'Are you sure?', :method => :delete %>
+</div>
+<% end %>

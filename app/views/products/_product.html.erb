@@ -1,0 +1,13 @@
+<div class="box product">
+	<span class="post-header">
+		<%= product.name %></span>
+		<br />
+		<span class="rating">***<span style="color:#CCC">**</span></span><br />
+		<%= image_tag product.image.url(:thumb) %>
+	<br />
+	<%= link_to @company.name, @company %><br />
+	<%= link_to 'Destroy', [product.company, product],
+				:confirm => 'Are you sure?',
+				:method => :delete %>
+	
+</div>

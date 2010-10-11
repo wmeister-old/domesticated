@@ -1,0 +1,45 @@
+<%= form_for @company, :html => {:multipart => true } do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+	<%= f.label :state %>
+	<%= select_tag(:state, options_for_select([['NY', 'NY']])) %>
+  </div>
+	<div class="field">
+	<%= f.label :city %>
+    <%= select_tag(:city, options_for_select([['new york', 'new york']])) %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+<div>
+	<%= f.label :city_id %>
+
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
