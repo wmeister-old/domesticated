@@ -19,6 +19,9 @@ a:hover {
 img {
 	border: 0;
 }
+#container {
+	width: 660px;
+}
 /* start box styles */
 div.box {
 	background-color:#FFF;
@@ -48,7 +51,7 @@ div.box {
 }
 .location-header {
 	float: left;
-	width: 1000px;
+	width: 660px;
 }
 /* end box styles */
 /* begin text styles */

@@ -1,5 +1,15 @@
+<table><tr><td>
 <%= render "include/navigation" %>
+</td><td>
+<div id="container">
+<div class="box location-header">
+	<span class="location-header">
+		<%= @city %>
+	</span>
+</div>
 <%= render "companies" %>
 <div class="box company">
 <%= link_to '+ new company', new_company_path %>
 </div>
+</div>
+</td></tr></table>

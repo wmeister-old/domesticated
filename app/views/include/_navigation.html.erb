@@ -5,20 +5,15 @@
 	<ul id="menu">
 		<li><a href="#">cities</a>
 			<ul>
-				<li>new york</li>
-				<li>portland</li>
+				<li><%= link_to "new york", :controller => "companies", :action => "index", :city => "new york" %></li>
+				<li><%= link_to "portland", :controller => "companies", :action => "index", :city => "portland" %></li>
 			</ul>
 		</li>		
 		<li><a href="#">states</a>
 			<ul>
-				<li>new york</li>
-				<li>oregon</li>
+				<li><%= link_to "new york", :controller => "companies", :action => "index", :state => "NY" %></li>
+				<li><%= link_to "oregon", :controller => "companies", :action => "index", :state => "OR" %></li>
 			</ul>
 		</li>
 	</ul>
-</div>
-<div class="box location-header">
-	<span class="location-header">
-		new york city
-	</span>
 </div>

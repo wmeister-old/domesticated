@@ -2,8 +2,12 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.xml
   def index
-    @companies = Company.all
-
+    @companies = Company.where("city = ? OR state = ?", params[:city], params[:state])
+    if @companies.first.city == "new york"
+      @city = @companies.first.city + " city"
+    else
+      @city = @companies.first.city
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @companies }

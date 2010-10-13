@@ -25,11 +25,11 @@
   </div>
   <div class="field">
 	<%= f.label :state %>
-	<%= select_tag(:state, options_for_select([['NY', 'NY']])) %>
+	<%= f.text_field :state %>
   </div>
 	<div class="field">
 	<%= f.label :city %>
-    <%= select_tag(:city, options_for_select([['new york', 'new york']])) %>
+    <%= f.text_field :city %>
   </div>
   <div class="field">
     <%= f.label :image %><br />
