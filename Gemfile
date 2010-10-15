@@ -10,7 +10,7 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'rio'
 gem 'acts_as_tree_rails3'
 gem 'faker'
-gem 'will_paginate'
+gem 'will_paginate', '3.0.pre'
 
 # Use unicorn as the web server
 # gem 'unicorn'

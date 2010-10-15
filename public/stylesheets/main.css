@@ -20,7 +20,7 @@ img {
 	border: 0;
 }
 #container {
-	width: 660px;
+	width: 680px;
 }
 /* start box styles */
 div.box {
@@ -51,7 +51,7 @@ div.box {
 }
 .location-header {
 	float: left;
-	width: 660px;
+	width: 650px;
 }
 /* end box styles */
 /* begin text styles */

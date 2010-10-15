@@ -1,7 +1,8 @@
 <div class="box navigation">
-	<form>
-		<input type="text" value="search">
-	</form><br />
+	<% form_tag companies_path, :method => 'get' do %>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag "search", :name => nil %>
+	<% end %>
 	<ul id="menu">
 		<li><a href="#">cities</a>
 			<ul>
