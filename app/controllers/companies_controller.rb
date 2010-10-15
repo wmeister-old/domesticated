@@ -2,11 +2,16 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.xml
   def index
-    @companies = Company.where("city = ? OR state = ?", params[:city], params[:state])
-    if @companies.first.city == "new york"
-      @city = @companies.first.city + " city"
+    @companies = Company.all
+    #@companies = Company.where("city = ? OR state = ?", params[:city], params[:state])
+    if @companies.first.city.nil?
+      @location = @companies.first.state
     else
-      @city = @companies.first.city
+      if @companies.first.city == "new york"
+        @city = @companies.first.city + " city"
+      else
+        @city = @companies.first.city
+      end
     end
     respond_to do |format|
       format.html # index.html.erb

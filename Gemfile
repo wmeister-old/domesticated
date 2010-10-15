@@ -6,8 +6,10 @@ gem 'rails', '3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'rio'
+gem 'acts_as_tree_rails3'
+gem 'faker'
 
 # Use unicorn as the web server
 # gem 'unicorn'

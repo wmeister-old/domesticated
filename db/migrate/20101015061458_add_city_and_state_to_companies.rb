@@ -1,4 +1,4 @@
-class AddCityAndStateToCompany < ActiveRecord::Migration
+class AddCityAndStateToCompanies < ActiveRecord::Migration
   def self.up
     change_table :companies do |t|
       t.string :city
@@ -7,5 +7,7 @@ class AddCityAndStateToCompany < ActiveRecord::Migration
   end
 
   def self.down
+    remove_column :companies, :city
+    remove_column :companies, :state
   end
 end

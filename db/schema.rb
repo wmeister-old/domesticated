@@ -10,19 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101011192055) do
+ActiveRecord::Schema.define(:version => 20101015061458) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "cities", :force => true do |t|
-    t.string   "name"
-    t.integer  "state_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
   create_table "companies", :force => true do |t|
@@ -35,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20101011192055) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "city_id"
     t.string   "city"
     t.string   "state"
   end
@@ -50,12 +43,6 @@ ActiveRecord::Schema.define(:version => 20101011192055) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
-  end
-
-  create_table "states", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
