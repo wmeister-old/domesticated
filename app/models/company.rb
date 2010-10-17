@@ -6,9 +6,9 @@ class Company < ActiveRecord::Base
     }
   has_many :products, :dependent => :destroy
   
-  def self.search(search, page)
-  paginate  :per_page => 9, :page => page,
-            :conditions => ['name like ?', "%#{search}%"],
-            :order => 'created_at DESC'
+  define_index do
+    indexes :name
+    indexes products.name, :as => :product_name
+    indexes [state, city], :as => :location
   end
 end
