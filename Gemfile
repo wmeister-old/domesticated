@@ -10,13 +10,10 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'rio'
 gem 'acts_as_tree_rails3'
 gem 'faker'
-<<<<<<< HEAD
-=======
 gem 'will_paginate', '3.0.pre2'
 gem 'mysql'
 require 'mysql'
 gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
->>>>>>> 43dbda05ef1568e2377b332dbd306b79d0d3945d
 
 # Use unicorn as the web server
 # gem 'unicorn'
