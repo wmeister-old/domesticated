@@ -12,6 +12,6 @@ module UsaHelper
   end
 
   def self.cities(k)
-    self.hash.values_at(k)
+    self.hash.values_at(k).flatten
   end
 end

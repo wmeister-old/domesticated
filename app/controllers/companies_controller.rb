@@ -1,6 +1,8 @@
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.search params[:search], :page => 1, :per_page => 9    
+    search_opt = { :page => 1, :per_page => 9 }
+#    search_opt[:with] = { :city => params[:city] } unless params[:city].nil?
+    @companies = Company.search(params[:search], search_opt)     
   end
 
   def show
@@ -23,7 +25,6 @@ class CompaniesController < ApplicationController
     else
       render :action => "new"
     end
-  end
 end
 
 def update
@@ -35,7 +36,6 @@ def update
     render :action => "edit"
   end
 end
-  end
 
   def destroy
     @company = Company.find(params[:id])

@@ -6,6 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+
+
 def add_categories
   seen = []
   p = nil
@@ -32,7 +34,16 @@ def add_companies
 end
 
 def add_company
-  Company.create(:name => Faker::Company.name, :website => Faker::Internet.domain_name, :description => Faker::Lorem.sentences)
+  total_states = UsaHelper.all_states.size
+  state = UsaHelper.all_states[rand(total_states)]
+  citys = UsaHelper.cities(state)
+  city  = citys[rand(citys.size)]
+
+  Company.create(:name        => Faker::Company.name,
+                 :website     => Faker::Internet.domain_name,
+                 :description => Faker::Lorem.sentences,
+                 :city        => city,
+                 :state       => state)
 end
 
 def random_category_id
