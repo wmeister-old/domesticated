@@ -41,7 +41,7 @@ def add_company
 
   Company.create(:name        => Faker::Company.name,
                  :website     => Faker::Internet.domain_name,
-                 :description => Faker::Lorem.sentences,
+                 :description => Faker::Lorem.sentences.join(' '),
                  :city        => city,
                  :state       => state)
 end
